@@ -2,6 +2,8 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
 
+## Live Demo https://music-player-c1astnyo0-zaid-working-project.vercel.app/
+
 ## Development server
 
 To start a local development server, run:
