@@ -1,0 +1,61 @@
+<!-- 🎯 Clean template without syntax errors -->
+<div 
+  class="song-card"
+  [class.playing]="isCurrentSong"
+  [class.paused]="isCurrentSong && !isPlaying"
+  appHoverEffect
+  [hoverScale]="1.03"
+  [hoverShadow]="'0 8px 25px rgba(0,0,0,0.15)'"
+>
+  
+  <!-- Album cover -->
+  <div class="album-cover">
+    <img [src]="song.coverArt" [alt]="song.album">
+    
+    <!-- Play button overlay -->
+    <div class="play-overlay">
+      <button 
+        class="play-btn"
+        (click)="onPlayClick()"
+        appRippleEffect
+        [rippleColor]="'rgba(255, 255, 255, 0.8)'"
+      >
+        <i class="fas" [class.fa-play]="!isPlaying" [class.fa-pause]="isPlaying"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Song information -->
+  <div class="song-info">
+    <h3 class="song-title">{{ song.title }}</h3>
+    <p class="song-artist">{{ song.artist }}</p>
+    <p class="song-album">{{ song.album }}</p>
+  </div>
+
+  <!-- Song metadata -->
+  <div class="song-meta">
+    <span class="duration">{{ song.duration | durationFormat }}</span>
+    <span class="file-size">{{ song.fileSize | fileSize }}</span>
+    <span class="added-date">Added {{ song.addedDate | timeAgo }}</span>
+  </div>
+
+  <!-- Action buttons -->
+  <div class="song-actions">
+    <button 
+      class="btn-add"
+      (click)="onAddToPlaylist()"
+      appRippleEffect
+    >
+      <i class="fas fa-plus"></i> Add
+    </button>
+    
+    <span class="play-count">
+      <i class="fas fa-play"></i> {{ song.plays.toLocaleString() }}
+    </span>
+    
+    <span class="like-count">
+      <i class="fas fa-heart"></i> {{ song.likes.toLocaleString() }}
+    </span>
+  </div>
+
+</div>

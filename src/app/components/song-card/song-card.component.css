@@ -1,0 +1,121 @@
+.song-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🎯 Style when this song is currently playing */
+.song-card.playing {
+  border-left: 4px solid #4CAF50;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* 🎯 Style when this song is current but paused */
+.song-card.paused {
+  border-left: 4px solid #FFC107;
+}
+
+.album-cover {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.album-cover img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* 🎯 Play button overlay - hidden by default */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 🎯 Show play overlay on card hover */
+.song-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-btn {
+  background: #4CAF50;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 🎯 Needed for ripple effect */
+  overflow: hidden; /* 🎯 Contain ripple within button */
+}
+
+.song-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.song-info p {
+  margin: 2px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.song-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.song-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-add {
+  background: #2196F3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative; /* 🎯 For ripple effect */
+  overflow: hidden; /* 🎯 Contain ripple */
+}
+
+.play-count, .like-count {
+  font-size: 12px;
+  color: #666;
+}
+
+.play-count i, .like-count i {
+  margin-right: 4px;
+}
+
+.like-count i {
+  color: #E91E63;
+}
